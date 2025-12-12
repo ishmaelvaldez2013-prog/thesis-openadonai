@@ -1,0 +1,28 @@
+.post-content .kg-embed-card {
+	> iframe:where(
+			[src*='player.vimeo.com'],
+			[src*='youtube.com'],
+			[src*='youtube-nocookie.com']
+		) {
+		background-color: var(--color-border);
+	}
+
+	/*
+		Adds responsive styles for specific providers only to prevent layout issues.
+		Previously applied to all embeds, caused layout problems.
+		For instance, Spotify embeds require fixed heights without aspect ratios.
+	*/
+	> iframe[src*='player.vimeo.com'],
+	> iframe[src*='youtube.com'],
+	> iframe[src*='youtube-nocookie.com'],
+	> iframe[src*='kickstarter.com'][src*='video.html'] {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+	}
+}
+
+/* Twitter. */
+.kg-embed-card > .twitter-tweet {
+	margin: 0;
+}

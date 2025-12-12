@@ -1,0 +1,10 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+{{#contentFor "body-class"}} template-narrow{{/contentFor}}
+
+{{#is "post"}}
+	{{> "templates/post"}}
+{{else}}
+	{{> "templates/page" hero_container_small=true hero_style_small=true}}
+{{/is}}

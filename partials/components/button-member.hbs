@@ -1,0 +1,26 @@
+{{!--
+	Button member:
+	* label (true)
+	* styled (true)
+ --}}
+
+{{!-- Account. --}}
+{{#if @member}}
+	<a class="button{{#if styled}} button-member{{/if}}" href="#/portal/account">{{t "Account"}}</a>
+
+{{!-- Sign in. --}}
+{{else if @site.members_invite_only}}
+	<a class="button button-member" href="#/portal/signin">{{t "Sign in"}}</a>
+
+{{!-- Subscribe. --}}
+{{else if @site.members_enabled}}
+	<a class="button button-member{{#if styled}} button-gradient{{/if}}" href="{{@site.signup_url}}">
+		<span class="label">
+			{{#if label}}
+			{{label}}
+			{{else}}
+			{{@site.portal_button_signup_text}}
+			{{/if}}
+		</span>
+	</a>
+{{/if}}

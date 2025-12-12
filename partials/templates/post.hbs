@@ -1,0 +1,28 @@
+
+{{#post}}
+{{!-- Everything inside the #post block pulls data from the page --}}
+
+	{{!-- Hide sidebar when post with tag #hide-posts-sidebar. --}}
+	{{#has tag="#hide-posts-sidebar"}}{{#contentFor "body-class"}} hide-sidebar-posts{{/contentFor}}{{/has}}
+
+	{{!-- Show breadcrumbs. --}}
+	{{#contentFor "show-breadcrumbs"}}true{{/contentFor}}
+
+	{{!-- Head. --}}
+	{{> "post/head"}}
+
+	{{!-- Breadcrumbs (visible screen --breakpoint-xs) --}}
+	{{> "components/breadcrumbs"}}
+
+	{{!-- Hero. --}}
+	{{> "post/hero"}}
+
+	{{!-- Content. --}}
+	{{> "post/content"}}
+
+	{{!-- Comments. --}}
+	{{> "post/comments"}}
+
+	{{!-- Read next. --}}
+	{{> "post/read-next"}}
+{{/post}}

@@ -1,0 +1,77 @@
+/* stylelint-disable at-rule-no-unknown */
+
+.post-content {
+	.kg-audio-card {
+		gap: var(--spacing-2);
+		padding: var(--spacing-1);
+		color: var(--color-contrast);
+		background-color: transparent;
+		border-radius: var(--radius-3);
+	}
+
+	.kg-audio-thumbnail {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	.kg-audio-thumbnail.placeholder svg {
+		color: var(--color-accent-foreground);
+	}
+
+	.kg-audio-player-container {
+		justify-content: space-evenly;
+		gap: calc(var(--spacing-1) * 0.5);
+	}
+
+	.kg-audio-current-time {
+		min-width: 32px;
+		padding-right: 0;
+	}
+
+	.kg-audio-seek-slider {
+		flex-basis: 0;
+	}
+
+	.kg-audio-title {
+		@mixin heading-6;
+
+		padding-left: 0;
+		padding-bottom: 0;
+		margin-top: 0;
+		color: var(--color-contrast);
+	}
+
+	.kg-audio-player {
+		flex-wrap: wrap;
+		padding-top: 0;
+		padding-left: 0;
+		gap: 6px;
+		flex-grow: 0;
+	}
+
+	.kg-audio-mute-icon,
+	.kg-audio-unmute-icon {
+		bottom: auto;
+	}
+
+	.kg-audio-playback-rate {
+		min-width: 34px;
+		padding: 0.15rem 0.25rem;
+		justify-content: center;
+		border-radius: 3px;
+
+		&:hover {
+			box-shadow: 0 0 0 1px var(--color-border);
+		}
+	}
+
+	.kg-audio-unmute-icon {
+		margin-right: -6px;
+	}
+}
+
+@media (--breakpoint-md) {
+	.post-content .kg-audio-volume-slider {
+		display: none;
+	}
+}

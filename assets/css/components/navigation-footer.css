@@ -1,0 +1,50 @@
+:where(.navigation-footer) {
+	/* Without dropdown. */
+	> ul > li > .nav-link {
+		--nav--link--padding-v: 5px;
+		--nav--link--padding-h: 9px;
+	}
+
+	> ul {
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 0 calc(var(--nav--link--padding-h) * -1)
+			calc(var(--nav--link--padding-v) * -1);
+	}
+
+	/* Separator. */
+	.nav-separator {
+		border-top: 0;
+		margin: 0;
+
+		&::before {
+			content: '/';
+			color: var(--color-mute);
+		}
+	}
+
+	/* Section. */
+	.nav-section {
+		display: none;
+	}
+
+	/* Dropdown. */
+	.dropdown-toggle {
+		margin-right: -4px;
+		margin-left: -8px;
+	}
+
+	.dropdown {
+		--padding-v: 10px;
+
+		top: auto;
+		bottom: 100%;
+		margin-top: 0;
+		margin-bottom: var(--padding-v);
+
+		&::before {
+			top: auto;
+			bottom: calc(var(--padding-v) * -1);
+		}
+	}
+}

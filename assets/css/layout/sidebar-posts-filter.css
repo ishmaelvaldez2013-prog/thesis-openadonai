@@ -1,0 +1,16 @@
+.sidebar-posts-filter {
+	width: 130px;
+	padding: 3.5px 10px;
+	min-height: 30px;
+	background-color: var(--color-background);
+	background-clip: padding-box;
+}
+
+.sidebar-list {
+	transition: opacity 0.2s ease;
+}
+
+.sidebar-list.loading {
+	opacity: 0.2;
+	pointer-events: none;
+}

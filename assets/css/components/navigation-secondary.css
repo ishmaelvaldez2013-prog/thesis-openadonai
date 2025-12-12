@@ -1,0 +1,78 @@
+:where(.navigation-secondary) {
+	/* Dropdown. */
+	.dropdown {
+		padding: 0;
+
+		> ul {
+			max-height: calc(95vh - var(--sidebar-header--min-height));
+			padding: 3px;
+			overflow: hidden auto;
+			scrollbar-width: thin;
+		}
+	}
+
+	/* Separator. */
+	.nav-separator {
+		margin: 1px -3px;
+		border-top: 1px solid var(--color-border);
+	}
+
+	/* Section. */
+	.nav-section {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+
+		&:not(:first-child) {
+			margin-top: 0.75rem;
+		}
+	}
+
+	.nav-section-link {
+		--nav--link--padding-v: 0px;
+		--nav--link--color: var(--color-foreground);
+		--nav--link-hover--color: var(--color-foreground);
+		--nav--link-hover--background-color: transparent;
+
+		font-size: var(--font-x-small);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	a.nav-section-link {
+		--nav--link-hover--color: var(--color-contrast);
+	}
+
+	/* Collapse. */
+	.collapse-toggle {
+		--collapse--icon: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 15L13 10L8 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+		--collapse--icon--rotate: 0deg;
+		--collapse-open--icon--rotate: 90deg;
+
+		> .label {
+			text-align: left;
+		}
+	}
+
+	.collapse {
+		> ul {
+			flex-direction: column;
+		}
+
+		.nav-item {
+			position: relative;
+			padding-left: 12px;
+		}
+
+		.nav-item::before {
+			content: '';
+			position: absolute;
+			top: 1.05em;
+			left: 6px;
+			width: 6px;
+			border-top: 1.5px solid var(--color-border);
+		}
+	}
+
+	.collapse .nav-item:first-child {
+		margin-top: 2px;
+	}
+}

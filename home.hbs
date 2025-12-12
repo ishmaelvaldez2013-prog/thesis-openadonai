@@ -1,0 +1,29 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+{{#contentFor "body-class"}} page-home{{/contentFor}}
+
+{{> "sections/hero"
+	match_title_image=true
+	title=@custom.header_title
+	title_else=@site.title
+	custom_excerpt=@custom.header_description
+	show_button_member=true
+	show_social_links=true
+	feature_image=@custom.header_image
+	image_back=@custom.header_image_back
+}}
+
+{{!-- Tags. --}}
+{{#> "get-tags" setting=@custom.tags_list}}
+	{{> "sections/tags"}}
+{{/"get-tags"}}
+
+{{!-- Featured posts. --}}
+{{> "sections/posts" title=(t "Featured") filter="featured:true"}}
+
+{{!-- Paid posts. --}}
+{{> "sections/posts" title=(t "Paid") filter="visibility:paid"}}
+
+{{!-- Latest posts. --}}
+{{> "sections/posts" title=(t "Latest")}}

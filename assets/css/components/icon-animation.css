@@ -1,0 +1,30 @@
+/* Burger. */
+.icon-burger {
+	path:first-child {
+		fill-opacity: 1;
+		transition: transform 0.2s ease;
+		transform-origin: 1.75px 0;
+		transform: scaleX(0);
+	}
+
+	[aria-expanded='true'] & path:first-child,
+	button:hover & path:first-child {
+		transform: scaleX(1);
+	}
+}
+
+/* Loader. */
+.icon-loader path {
+	animation: thesis-icon-loader 0.5s infinite linear;
+	transform-origin: 50% 50%;
+}
+
+@keyframes thesis-icon-loader {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

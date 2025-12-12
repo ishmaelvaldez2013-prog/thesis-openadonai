@@ -1,0 +1,11 @@
+{{#if (block "show-breadcrumbs")}}
+<nav class="breadcrumbs navigation" aria-label="{{t "Breadcrumbs Navigation"}}">
+	<ul>
+		<li><a class="nav-link" href="{{@site.url}}">{{t "Home"}}</a></li>
+		{{#match (t "/tags/") "!=" "false"}}
+		<li>{{> "icons/chevron-right"}}</li>
+		<li><a class="nav-link" href="{{t "/tags/"}}">{{t "Tags"}}</a></li>
+		{{/match}}
+	</ul>
+</nav>
+{{/if}}

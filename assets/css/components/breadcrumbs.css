@@ -1,0 +1,28 @@
+.breadcrumbs {
+	display: block;
+
+	> ul {
+		margin: -5px 0 -5px -9px;
+		flex-flow: row;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	svg {
+		display: block;
+		width: 1.143em;
+		height: 1.143em;
+		margin-top: -0.1em;
+		margin-bottom: -0.1em;
+	}
+
+	.nav-link {
+		padding: 5px 9px;
+		border-radius: var(--radius-1);
+		color: var(--color-foreground);
+	}
+
+	.nav-link:hover {
+		color: var(--color-contrast);
+	}
+}

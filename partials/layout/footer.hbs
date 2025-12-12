@@ -1,0 +1,20 @@
+<footer class="footer">
+	<div class="container-wide">
+		<div class="footer-col">
+			{{> "components/logo"}}
+			{{#if @custom.footer_description}}<p>{{@custom.footer_description}}</p>{{/if}}
+		</div>
+
+		{{#if @site.navigation}}
+		<nav class="navigation navigation-footer" aria-label="{{t "Footer Primary Navigation"}}">
+			{{navigation collapse=false show_icon=false}}
+		</nav>
+		{{/if}}
+
+		<hr class="footer-divider">
+
+		{{> "layout/footer-copyright"}}
+
+		{{> "components/social-links"}}
+	</div>
+</footer>

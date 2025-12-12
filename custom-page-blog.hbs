@@ -1,0 +1,10 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+{{#contentFor "body-class"}} template-blog{{/contentFor}}
+
+{{> "templates/blog" hidden=true}}
+
+{{> "sections/posts" title=(t "Featured") filter="featured:true"}}
+
+{{> "sections/posts" title=(t "Paid") filter="visibility:paid"}}

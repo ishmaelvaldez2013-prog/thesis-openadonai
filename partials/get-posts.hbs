@@ -1,0 +1,37 @@
+{{!--
+	Get posts:
+	* withGet (true)
+	* pagination_class (string)
+	* pagination_type (string)
+	* pagination_prepend (string)
+	* pagination_append (string)
+	* pagination_from (string)
+ --}}
+
+{{#*inline "posts-with-get"}}
+	{{#get "posts" limit=@config.posts_per_page include="tags,tiers"}}
+		{{#if posts}}
+			{{> @partial-block}}
+
+			{{pagination class=../pagination_class href=true type=../pagination_type append=../pagination_append from=../pagination_from prev=false}}
+		{{/if}}
+	{{/get}}
+{{/inline}}
+
+{{#if posts}}
+	{{#if withGet}}
+		{{#> "posts-with-get"}}
+			{{> @partial-block}}
+		{{/"posts-with-get"}}
+	{{else}}
+		{{pagination class=pagination_class prepend=pagination_prepend from=pagination_from next=false}}
+
+		{{> @partial-block}}
+
+		{{pagination class=pagination_class type=pagination_type append=pagination_append from=pagination_from prev=false}}
+	{{/if}}
+{{else}}
+	{{#> "posts-with-get"}}
+		{{> @partial-block}}
+	{{/"posts-with-get"}}
+{{/if}}

@@ -1,0 +1,13 @@
+<section class="post-read-next section-posts container">
+	<h2>{{t "Read next"}}</h2>
+
+	{{#get "posts" include="tags,tiers" filter="id:-{{id}}+tag:-hash-project" limit="2" as |next|}}
+		{{#if posts}}
+		<div class="section-list">
+			{{#foreach posts}}
+				{{> "components/card-post"}}
+			{{/foreach}}
+		</div>
+		{{/if}}
+	{{/get}}
+</section>

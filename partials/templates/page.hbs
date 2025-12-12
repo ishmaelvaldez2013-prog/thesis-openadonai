@@ -1,0 +1,12 @@
+{{#page}}
+{{!-- Everything inside the #page block pulls data from the page --}}
+
+	{{#has tag="#hide-posts-sidebar"}}{{#contentFor "body-class"}} hide-sidebar-posts{{/contentFor}}{{/has}}
+
+	{{!-- Hero. --}}
+	{{> "sections/hero" container_small=../hero_container_small style_small=../hero_style_small match_title_image=@page.show_title_and_feature_image}}
+
+	{{!-- Content. --}}
+	{{> "post/content"}}
+
+{{/page}}

@@ -1,0 +1,23 @@
+/* stylelint-disable at-rule-no-unknown */
+
+@mixin color-scheme-dark {
+	.toggle-color-scheme > .button > .icon-sun {
+		display: none;
+	}
+}
+
+@mixin color-scheme-light {
+	.toggle-color-scheme > .button > .icon-moon {
+		display: none;
+	}
+}
+
+.toggle-color-scheme-button {
+	cursor: pointer;
+}
+
+[data-color-scheme='system'] .nav-link[value='system'],
+[data-color-scheme='light'] .nav-link[value='light'],
+[data-color-scheme='dark'] .nav-link[value='dark'] {
+	background-color: var(--color-background-300);
+}

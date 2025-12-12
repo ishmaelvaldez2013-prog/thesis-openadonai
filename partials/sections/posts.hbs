@@ -1,0 +1,16 @@
+{{#get "posts" include="tags,tiers" limit=3 filter=filter}}
+{{#if posts}}
+<section class="section section-posts container-wide">
+	<h2 class="section-title">{{../title}}</h2>
+	<div class="section-list">
+		{{#foreach posts}}
+			{{#match @index 0}}
+				{{> "components/card-post" has_image=true}}
+			{{else}}
+				{{> "components/card-post"}}
+			{{/match}}
+		{{/foreach}}
+	</div>
+</section>
+{{/if}}
+{{/get}}

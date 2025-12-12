@@ -1,0 +1,20 @@
+{{#if tags}}
+<nav class="navigation navigation-tags navigation-has-current" aria-label="{{t "Tags Navigation"}}">
+	<div class="nav-section">{{t "Tags"}}</div>
+
+	<ul>
+		{{#foreach tags}}
+		<li>
+			<a class="nav-link{{#match slug ../slug}}{{#is "tag"}} nav-link-current{{/is}}{{/match}}" href="{{url}}"{{#if accent_color}} style="--tag--color: {{accent_color}};"{{/if}}>
+				{{#if feature_image}}
+				{{> "components/image" size="32" sizes="16px" class="nav-link-image" src=feature_image alt=(t "tag {tag}" tag=name)}}
+				{{else}}
+				<svg class="nav-link-image"></svg>
+				{{/if}}
+				<span>{{name}}</span>
+			</a>
+		</li>
+		{{/foreach}}
+	</ul>
+</nav>
+{{/if}}

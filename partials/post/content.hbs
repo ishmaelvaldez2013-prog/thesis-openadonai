@@ -1,0 +1,34 @@
+{{#if html}}
+	{{!-- Toc for post. --}}
+	{{#is "post"}}
+		{{^has tag="#hide-toc"}}
+			{{> "post/toc"}}
+		{{/has}}
+
+	{{!-- Toc for page. --}}
+	{{else}}
+		{{#has tag="#toc"}}
+			{{> "post/toc"}}
+		{{/has}}
+	{{/is}}
+
+	{{!-- Content. --}}
+	<div class="post-content{{#unless access}} post-content-teaser{{/unless}}">
+		{{#unless @page.show_title_and_feature_image}}{{#if custom_excerpt}}
+			<p class="post-excerpt">{{custom_excerpt}}</p>
+		{{/if}}{{/unless}}
+
+		{{{html}}}
+	</div>
+{{else if custom_excerpt}}
+	{{#unless @page.show_title_and_feature_image}}
+		<div class="post-content{{#unless access}} post-content-teaser{{/unless}}">
+			<p class="post-excerpt">{{custom_excerpt}}</p>
+		</div>
+	{{/unless}}
+{{/if}}
+
+{{!-- Content CTA. --}}
+{{#unless access}}
+	{{> "post/content-cta"}}
+{{/unless}}

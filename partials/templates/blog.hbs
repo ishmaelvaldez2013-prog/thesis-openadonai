@@ -1,0 +1,28 @@
+{{#page}}
+{{!-- Everything inside the #page block pulls data from the page --}}
+
+	{{#has tag="#hide-posts-sidebar"}}{{#contentFor "body-class"}} hide-sidebar-posts{{/contentFor}}{{/has}}
+
+	{{!-- Hero. --}}
+	{{> "sections/hero"
+		container_wide=../hero_container_wide
+		container_small=../hero_container_small
+		style_small=true
+		match_title_image=@page.show_title_and_feature_image
+	}}
+
+	{{!-- Content. --}}
+	{{> "post/content"}}
+
+	{{!-- Posts. --}}
+	<div class="section section-posts container-wide{{#if ../hidden}} template-blog-posts{{/if}}">
+		{{#> "get-posts" pagination_type="load-more-infinite" pagination_prepend=".content .post-list" pagination_append=".content .post-list" pagination_from=".post-list"}}
+			<div class="section-list post-list">
+				{{#foreach posts}}
+					{{> "components/card-post"}}
+				{{/foreach}}
+			</div>
+		{{/"get-posts"}}
+	</div>
+
+{{/page}}

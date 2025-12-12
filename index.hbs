@@ -1,0 +1,16 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+<h1 class="screen-reader-text">{{@site.title}}</h1>
+
+{{#if posts}}
+<div class="section section-posts container-wide">
+	{{#> "get-posts" pagination_type="load-more-infinite" pagination_prepend=".content .post-list" pagination_append=".content .post-list" pagination_from=".post-list"}}
+		<div class="section-list post-list">
+			{{#foreach posts}}
+				{{> "components/card-post"}}
+			{{/foreach}}
+		</div>
+	{{/"get-posts"}}
+</div>
+{{/if}}
